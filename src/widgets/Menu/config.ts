@@ -120,7 +120,7 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/kukafe",
+        href: "https://t.me/kukafefinance",
       },
       // {
       //   label: "Bahasa Indonesia",
