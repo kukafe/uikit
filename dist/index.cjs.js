@@ -2175,7 +2175,7 @@ var links = [
         ],
     },
     {
-        label: 'Status',
+        label: 'KuKafe Health',
         icon: 'StatusIcon',
         href: '/status',
     },
