@@ -42,6 +42,11 @@ export const links = [
       // },
     ],
   },
+  {
+    label: 'Status',
+    icon: 'StatusIcon',
+    href: '/status',
+  },
 ];
 
 export const socials = [

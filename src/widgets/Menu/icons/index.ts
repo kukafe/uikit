@@ -28,3 +28,4 @@ export { default as EggHouseIcon } from "./EggHouse";
 export { default as EspressoIcon } from "./Espresso";
 export { default as FrenchpressIcon } from "./Frenchpress";
 export { default as DripIcon } from "./Drip";
+export { default as StatusIcon } from "./Status";
