@@ -2153,6 +2153,11 @@ var links = [
         href: '/espresso',
     },
     {
+        label: 'KuKafe Health',
+        icon: 'StatusIcon',
+        href: '/status',
+    },
+    {
         label: "More",
         icon: "MoreIcon",
         items: [
@@ -2168,16 +2173,11 @@ var links = [
                 label: "Docs",
                 href: "https://kukafe.gitbook.io/kukafe",
             },
-            // {
-            //   label: "Blog",
-            //   href: "https://goosefinance.medium.com/",
-            // },
+            {
+                label: "Blog",
+                href: "	https://medium.com/@kukafefinance",
+            },
         ],
-    },
-    {
-        label: 'KuKafe Health',
-        icon: 'StatusIcon',
-        href: '/status',
     },
 ];
 var socials = [

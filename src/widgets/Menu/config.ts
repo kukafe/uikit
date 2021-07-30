@@ -19,7 +19,11 @@ export const links = [
     icon: 'EspressoIcon',
     href: '/espresso',
   },
-
+  {
+    label: 'KuKafe Health',
+    icon: 'StatusIcon',
+    href: '/status',
+  },
   {
     label: "More",
     icon: "MoreIcon",
@@ -36,17 +40,13 @@ export const links = [
         label: "Docs",
         href: "https://kukafe.gitbook.io/kukafe",
       },
-      // {
-      //   label: "Blog",
-      //   href: "https://goosefinance.medium.com/",
-      // },
+      {
+        label: "Blog",
+        href: "	https://medium.com/@kukafefinance",
+      },
     ],
   },
-  {
-    label: 'KuKafe Health',
-    icon: 'StatusIcon',
-    href: '/status',
-  },
+
 ];
 
 export const socials = [
