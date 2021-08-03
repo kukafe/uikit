@@ -11,6 +11,11 @@ export declare const links: ({
         href: string;
     }[];
     href?: undefined;
+} | {
+    label: string;
+    icon: string;
+    href?: undefined;
+    items?: undefined;
 })[];
 export declare const socials: ({
     label: string;

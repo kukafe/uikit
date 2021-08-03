@@ -46,6 +46,11 @@ export const links = [
       },
     ],
   },
+  {
+    label: 'Obelisk Audit (soon)',
+    icon: 'ObeliskIcon',
+    // href: '/status',
+  },
 
 ];
 
