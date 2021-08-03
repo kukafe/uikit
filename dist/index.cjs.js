@@ -2188,6 +2188,7 @@ var links = [
     {
         label: 'Obelisk Audit (soon)',
         icon: 'ObeliskIcon',
+        href: '/',
         // href: '/status',
     },
 ];
