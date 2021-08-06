@@ -2674,7 +2674,7 @@ var Avatar = function (_a) {
 var templateObject_1$4, templateObject_2$1;
 
 var Wrapper = styled__default['default'].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var Copyright = styled__default['default'].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+var Copyright = styled__default['default'].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  color: ", ";\n  opacity: 0.2;\n"], ["\n  color: ", ";\n  opacity: 0.2;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
