@@ -15,6 +15,9 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
 `;
+const Copyright = styled.div`
+  color: ${({ theme }) => theme.colors.textSubtle};
+`
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
   position: fixed;
@@ -120,6 +123,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
+        <Copyright>kukafe finance (c) 2021</Copyright>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
