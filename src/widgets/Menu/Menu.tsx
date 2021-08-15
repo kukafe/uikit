@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 const Copyright = styled.div`
   color: ${({ theme }) => theme.colors.textSubtle};
   opacity: 0.2;
+  text-align: center;
 `
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
