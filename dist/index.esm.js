@@ -2354,10 +2354,10 @@ var PanelBody = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         if (entry.items) {
             return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
-                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: location.pathname.startsWith(item.href), onClick: handleClick },
+                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
                     React.createElement(MenuLink, { href: item.href }, item.label))); })));
         }
-        return (React.createElement(MenuEntry, { key: entry.label, isActive: location.pathname.startsWith(entry.href), className: calloutClass },
+        return (React.createElement(MenuEntry, { key: entry.label, isActive: (entry.href === '/') ? location.pathname === '/' : location.pathname.startsWith(entry.href), className: calloutClass },
             React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
                 iconElement,
                 React.createElement(LinkLabel, { isPushed: isPushed }, entry.label))));
