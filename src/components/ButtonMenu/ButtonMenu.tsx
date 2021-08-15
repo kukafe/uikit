@@ -11,7 +11,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   children,
 }) => {
   return (
-    <StyledButtonMenu style={{justifyContent: "center", alignItems: "center", alignContent: "center"}} variant={variant}>
+    <StyledButtonMenu style={{backgroundColor: "transparent", justifyContent: "center", alignItems: "center", alignContent: "center"}} variant={variant}>
       {Children.map(children, (child: ReactElement<ButtonMenuItemProps>, index) => {
         return cloneElement(child, {
           isActive: activeIndex === index,
