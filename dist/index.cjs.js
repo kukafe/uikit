@@ -2392,13 +2392,13 @@ var PanelFooter = function (_a) {
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement(IconButton, { variant: "text" },
-                React__default['default'].createElement("img", { src: "images/kcc_small.png", alt: "kcc" })),
+                React__default['default'].createElement("img", { src: "images/kcc_small.png", width: 24, alt: "kcc" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React__default['default'].createElement(Icon$Z, null))));
     }
     return (React__default['default'].createElement(Container, null,
-        React__default['default'].createElement(IconButton, { variant: "text" },
-            React__default['default'].createElement("img", { src: "images/kcc.svg", alt: "kcc" })),
+        React__default['default'].createElement(IconButton, { variant: "text", style: { width: "100%" } },
+            React__default['default'].createElement("img", { src: "images/kcc.svg", width: 100, alt: "kcc" })),
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React__default['default'].createElement(Icon$P, { width: "24px", mr: "8px" }),

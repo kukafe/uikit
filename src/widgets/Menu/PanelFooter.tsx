@@ -70,7 +70,7 @@ const PanelFooter: React.FC<Props> = ({
       <Container>
 
         <IconButton variant="text">
-          <img src="images/kcc_small.png" alt="kcc"/>
+          <img src="images/kcc_small.png" width={24} alt="kcc"/>
         </IconButton>
 
         
@@ -83,8 +83,8 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
-        <IconButton variant="text">
-          <img src="images/kcc.svg" alt="kcc"/>
+        <IconButton variant="text" style={{width: "100%"}}>
+          <img src="images/kcc.svg" width={100} alt="kcc"/>
       </IconButton>
       <SocialEntry>
         {cakePriceUsd ? (

@@ -2379,13 +2379,13 @@ var PanelFooter = function (_a) {
     if (!isPushed) {
         return (React.createElement(Container, null,
             React.createElement(IconButton, { variant: "text" },
-                React.createElement("img", { src: "images/kcc_small.png", alt: "kcc" })),
+                React.createElement("img", { src: "images/kcc_small.png", width: 24, alt: "kcc" })),
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React.createElement(Icon$Z, null))));
     }
     return (React.createElement(Container, null,
-        React.createElement(IconButton, { variant: "text" },
-            React.createElement("img", { src: "images/kcc.svg", alt: "kcc" })),
+        React.createElement(IconButton, { variant: "text", style: { width: "100%" } },
+            React.createElement("img", { src: "images/kcc.svg", width: 100, alt: "kcc" })),
         React.createElement(SocialEntry, null,
             cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React.createElement(Icon$P, { width: "24px", mr: "8px" }),
