@@ -2391,10 +2391,14 @@ var PanelFooter = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark, cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, priceLink = _a.priceLink;
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
+            React__default['default'].createElement(IconButton, { variant: "text" },
+                React__default['default'].createElement("img", { src: "images/kcc_small.png", alt: "kcc" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React__default['default'].createElement(Icon$Z, null))));
     }
     return (React__default['default'].createElement(Container, null,
+        React__default['default'].createElement(IconButton, { variant: "text" },
+            React__default['default'].createElement("img", { src: "images/kcc.svg", alt: "kcc" })),
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React__default['default'].createElement(Icon$P, { width: "24px", mr: "8px" }),

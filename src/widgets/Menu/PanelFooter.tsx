@@ -68,6 +68,12 @@ const PanelFooter: React.FC<Props> = ({
   if (!isPushed) {
     return (
       <Container>
+
+        <IconButton variant="text">
+          <img src="images/kcc_small.png" alt="kcc"/>
+        </IconButton>
+
+        
         <IconButton variant="text" onClick={() => pushNav(true)}>
           <CogIcon />
         </IconButton>
@@ -77,6 +83,9 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
+        <IconButton variant="text">
+          <img src="images/kcc.svg" alt="kcc"/>
+      </IconButton>
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
