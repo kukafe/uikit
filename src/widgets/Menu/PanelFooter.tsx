@@ -65,12 +65,22 @@ const PanelFooter: React.FC<Props> = ({
   setLang,
   priceLink,
 }) => {
+  const kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0
+  const movrMode = window.location.href.indexOf('moon.kafe.finance') >= 0
+
+  const getLogo = (mode: string) => {
+    if (kccMode){
+      return (mode === "small") ? "images/kcc_small.png" : "images/kcc.svg"
+    } else if (movrMode) {
+      return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png"
+    }
+  }
   if (!isPushed) {
     return (
       <Container>
 
         <IconButton variant="text">
-          <img src="images/kcc_small.png" width={24} alt="kcc"/>
+          <img src={getLogo('small')} width={24} alt="logo"/>
         </IconButton>
 
         
@@ -84,7 +94,7 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
         <IconButton variant="text" style={{width: "100%"}}>
-          <img src="images/kcc.svg" width={100} alt="kcc"/>
+          <img src={getLogo('big')} width={100} alt="logo"/>
       </IconButton>
       <SocialEntry>
         {cakePriceUsd ? (

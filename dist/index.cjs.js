@@ -2389,16 +2389,26 @@ var SettingsEntry = styled__default['default'].div(templateObject_3$1 || (templa
 var SocialEntry = styled__default['default'].div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark, cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, priceLink = _a.priceLink;
+    var kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0;
+    var movrMode = window.location.href.indexOf('moon.kafe.finance') >= 0;
+    var getLogo = function (mode) {
+        if (kccMode) {
+            return (mode === "small") ? "images/kcc_small.png" : "images/kcc.svg";
+        }
+        else if (movrMode) {
+            return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
+        }
+    };
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement(IconButton, { variant: "text" },
-                React__default['default'].createElement("img", { src: "images/kcc_small.png", width: 24, alt: "kcc" })),
+                React__default['default'].createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React__default['default'].createElement(Icon$Z, null))));
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement(IconButton, { variant: "text", style: { width: "100%" } },
-            React__default['default'].createElement("img", { src: "images/kcc.svg", width: 100, alt: "kcc" })),
+            React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React__default['default'].createElement(Icon$P, { width: "24px", mr: "8px" }),
