@@ -2401,13 +2401,13 @@ var PanelFooter = function (_a) {
     };
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
-            React__default['default'].createElement(IconButton, { variant: "text" },
+            React__default['default'].createElement("div", { style: { width: "100%" } },
                 React__default['default'].createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React__default['default'].createElement(Icon$Z, null))));
     }
     return (React__default['default'].createElement(Container, null,
-        React__default['default'].createElement(IconButton, { variant: "text", style: { width: "100%" } },
+        React__default['default'].createElement("div", { style: { width: "100%" } },
             React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },

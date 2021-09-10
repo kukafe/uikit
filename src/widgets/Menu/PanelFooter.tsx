@@ -79,9 +79,9 @@ const PanelFooter: React.FC<Props> = ({
     return (
       <Container>
 
-        <IconButton variant="text">
+        <div style={{width: "100%"}}>
           <img src={getLogo('small')} width={24} alt="logo"/>
-        </IconButton>
+        </div>
 
         
         <IconButton variant="text" onClick={() => pushNav(true)}>
@@ -93,9 +93,9 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
-        <IconButton variant="text" style={{width: "100%"}}>
+        <div style={{width: "100%"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>
-      </IconButton>
+      </div>
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
