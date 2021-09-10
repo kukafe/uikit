@@ -79,7 +79,7 @@ const PanelFooter: React.FC<Props> = ({
     return (
       <Container>
 
-        <div style={{width: "100%"}}>
+        <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('small')} width={24} alt="logo"/>
         </div>
 
@@ -93,7 +93,7 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
-        <div style={{width: "100%"}}>
+        <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>
       </div>
       <SocialEntry>
