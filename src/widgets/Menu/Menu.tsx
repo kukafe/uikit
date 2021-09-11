@@ -125,7 +125,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-      <Copyright>kukafe finance (c) 2021</Copyright>
+        <Copyright>kafe finance (c) 2021</Copyright>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
