@@ -65,7 +65,7 @@ const PanelFooter: React.FC<Props> = ({
   setLang,
   priceLink,
 }) => {
-  const kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0
+  const kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0 || window.location.href.indexOf('kukafe.finance') >= 0
   const movrMode = window.location.href.indexOf('moon.kafe.finance') >= 0
 
   const getLogo = (mode: string) => {
