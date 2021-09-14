@@ -42,7 +42,7 @@ export const links = [
       },
       {
         label: "Blog",
-        href: "	https://medium.com/@kukafefinance",
+        href: "	https://kafefinance.medium.com",
       },
     ],
   },
@@ -61,7 +61,7 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/kukafefinance",
+        href: "https://t.me/kafedotfinance",
       },
       // {
       //   label: "Bahasa Indonesia",
@@ -116,7 +116,7 @@ export const socials = [
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/kukafefinance",
+    href: "https://twitter.com/kafefinance",
   },
   // {
   //   label: "Reddit",

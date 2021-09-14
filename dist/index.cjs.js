@@ -2193,7 +2193,7 @@ var links = [
             },
             {
                 label: "Blog",
-                href: "	https://medium.com/@kukafefinance",
+                href: "	https://kafefinance.medium.com",
             },
         ],
     },
@@ -2210,7 +2210,7 @@ var socials = [
         items: [
             {
                 label: "English",
-                href: "https://t.me/kukafefinance",
+                href: "https://t.me/kafedotfinance",
             },
             // {
             //   label: "Bahasa Indonesia",
@@ -2265,7 +2265,7 @@ var socials = [
     {
         label: "Twitter",
         icon: "TwitterIcon",
-        href: "https://twitter.com/kukafefinance",
+        href: "https://twitter.com/kafefinance",
     },
     // {
     //   label: "Reddit",
