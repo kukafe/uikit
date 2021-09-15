@@ -2730,7 +2730,7 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_6 || 
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var Refresh = styled__default['default'].img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 28px;\n  height: 28px;\n"], ["\n  width: 28px;\n  height: 28px;\n"])));
+var Refresh = styled__default['default'].img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"], ["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"])));
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
@@ -2776,7 +2776,7 @@ var Menu = function (_a) {
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Copyright, null, "kafe finance (c) 2021"),
-            React__default['default'].createElement(Flex, null,
+            React__default['default'].createElement(Flex, { style: { alignContent: "center" } },
                 React__default['default'].createElement(Refresh, { src: "./images/spinner.png", onClick: refresh }),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),

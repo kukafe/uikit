@@ -64,8 +64,10 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 
 const Refresh = styled.img`
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  cursor: pointer;
 `
 const Menu: React.FC<NavProps> = ({
   account,
@@ -133,7 +135,7 @@ const Menu: React.FC<NavProps> = ({
         />
 
         <Copyright>kafe finance (c) 2021</Copyright>
-        <Flex>
+        <Flex style={{alignContent: "center"}}>
 
           <Refresh src="./images/spinner.png" onClick={refresh}/>
           <UserBlock account={account} login={login} logout={logout} />
