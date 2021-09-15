@@ -115,7 +115,9 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-
+  const refresh = () => {
+    window.location.reload(true);
+  }
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
@@ -128,8 +130,11 @@ const Menu: React.FC<NavProps> = ({
 
         <Copyright>kafe finance (c) 2021</Copyright>
         <Flex>
+
+          <image width="24" height="24" href="./images/spinner.png" onClick={refresh}/>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
+          
         </Flex>
       </StyledNav>
       <BodyWrapper>
