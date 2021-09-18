@@ -2345,7 +2345,7 @@ var Container$1 = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeT
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
     var location = useLocation();
-    // console.log(links, location)
+    console.log("locaiotn", location);
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
     return (React.createElement(Container$1, null, links.map(function (entry) {
