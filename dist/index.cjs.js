@@ -2357,8 +2357,9 @@ var Icons$1 = IconModule;
 var Container$1 = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"])));
 var PanelBody = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, isMobile = _a.isMobile, links = _a.links;
-    var location = reactRouterDom.useLocation();
-    console.log("locaiotn", location);
+    var _location = reactRouterDom.useLocation();
+    var location = _location.location ? _location.location : _location;
+    console.log("location", location, _location);
     // Close the menu when a user clicks a link on mobile
     var handleClick = isMobile ? function () { return pushNav(false); } : undefined;
     return (React__default['default'].createElement(Container$1, null, links.map(function (entry) {
