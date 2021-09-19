@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import ReactTooltip from 'react-tooltip';
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
@@ -63,12 +64,50 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const Refresh = styled.img`
+
+const Spinner = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 5px;
   cursor: pointer;
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+  @-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
 `
+
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -83,6 +122,7 @@ const Menu: React.FC<NavProps> = ({
   priceLink,
   profile,
   children,
+  needRefresh = false,
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
@@ -137,7 +177,12 @@ const Menu: React.FC<NavProps> = ({
         <Copyright>kafe finance (c) 2021</Copyright>
         <Flex style={{alignContent: "center"}}>
 
-          <Refresh src="./images/spinner.png" onClick={refresh}/>
+          
+
+
+          {needRefresh && <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spinner.png" onClick={refresh}/>}
+          {/* needRefresh */}
+          <ReactTooltip />
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
           

@@ -8,6 +8,7 @@ var styledSystem = require('styled-system');
 var get = require('lodash/get');
 var noop = require('lodash/noop');
 var debounce = require('lodash/debounce');
+var ReactTooltip = require('react-tooltip');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
@@ -19,6 +20,7 @@ var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
+var ReactTooltip__default = /*#__PURE__*/_interopDefaultLegacy(ReactTooltip);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
 /*! *****************************************************************************
@@ -66,7 +68,7 @@ function __spreadArray(to, from, pack) {
             ar[i] = from[i];
         }
     }
-    return to.concat(ar || from);
+    return to.concat(ar || Array.prototype.slice.call(from));
 }
 
 function __makeTemplateObject(cooked, raw) {
@@ -1147,7 +1149,7 @@ var SpinnerIcon = function (props) {
 };
 var Container$3 = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var RotatingPancakeIcon = styled__default['default'](SpinnerIcon)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"])), rotate);
-var Spinner = function (_a) {
+var Spinner$1 = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 128 : _b;
     return (React__default['default'].createElement(Container$3, null,
         React__default['default'].createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" })));
@@ -2731,14 +2733,14 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_6 || 
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var Refresh = styled__default['default'].img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"], ["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"])));
+var Spinner = styled__default['default'].img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n  -webkit-animation: rotating 2s linear infinite;\n  -moz-animation: rotating 2s linear infinite;\n  -ms-animation: rotating 2s linear infinite;\n  -o-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n  @-webkit-keyframes rotating /* Safari and Chrome */ {\n    from {\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes rotating {\n    from {\n      -ms-transform: rotate(0deg);\n      -moz-transform: rotate(0deg);\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -ms-transform: rotate(360deg);\n      -moz-transform: rotate(360deg);\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n"], ["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n  -webkit-animation: rotating 2s linear infinite;\n  -moz-animation: rotating 2s linear infinite;\n  -ms-animation: rotating 2s linear infinite;\n  -o-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n  @-webkit-keyframes rotating /* Safari and Chrome */ {\n    from {\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes rotating {\n    from {\n      -ms-transform: rotate(0deg);\n      -moz-transform: rotate(0deg);\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -ms-transform: rotate(360deg);\n      -moz-transform: rotate(360deg);\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n"])));
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children, _c = _a.needRefresh, needRefresh = _c === void 0 ? false : _c;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _c = React.useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
+    var _d = React.useState(!isMobile), isPushed = _d[0], setIsPushed = _d[1];
+    var _e = React.useState(true), showMenu = _e[0], setShowMenu = _e[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
     React.useEffect(function () {
         var handleScroll = function () {
@@ -2778,7 +2780,8 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Copyright, null, "kafe finance (c) 2021"),
             React__default['default'].createElement(Flex, { style: { alignContent: "center" } },
-                React__default['default'].createElement(Refresh, { src: "./images/spinner.png", onClick: refresh }),
+                needRefresh && React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spinner.png", onClick: refresh }),
+                React__default['default'].createElement(ReactTooltip__default['default'], null),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,
@@ -3106,7 +3109,7 @@ exports.RemoveIcon = Icon$M;
 exports.ResetCSS = ResetCSS;
 exports.SearchIcon = Icon$G;
 exports.Skeleton = Skeleton;
-exports.Spinner = Spinner;
+exports.Spinner = Spinner$1;
 exports.Svg = Svg;
 exports.SwapVertIcon = Icon$F;
 exports.SyncAltIcon = Icon$E;

@@ -4,6 +4,7 @@ import { space, flexbox, layout } from 'styled-system';
 import get from 'lodash/get';
 import noop from 'lodash/noop';
 import debounce from 'lodash/debounce';
+import ReactTooltip from 'react-tooltip';
 import throttle from 'lodash/throttle';
 import { Link as Link$1, NavLink, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -53,7 +54,7 @@ function __spreadArray(to, from, pack) {
             ar[i] = from[i];
         }
     }
-    return to.concat(ar || from);
+    return to.concat(ar || Array.prototype.slice.call(from));
 }
 
 function __makeTemplateObject(cooked, raw) {
@@ -1134,7 +1135,7 @@ var SpinnerIcon = function (props) {
 };
 var Container$3 = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var RotatingPancakeIcon = styled(SpinnerIcon)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"])), rotate);
-var Spinner = function (_a) {
+var Spinner$1 = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 128 : _b;
     return (React.createElement(Container$3, null,
         React.createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" })));
@@ -2718,14 +2719,14 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_6 || (templateObject_6 = 
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var Refresh = styled.img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"], ["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n"])));
+var Spinner = styled.img(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n  -webkit-animation: rotating 2s linear infinite;\n  -moz-animation: rotating 2s linear infinite;\n  -ms-animation: rotating 2s linear infinite;\n  -o-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n  @-webkit-keyframes rotating /* Safari and Chrome */ {\n    from {\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes rotating {\n    from {\n      -ms-transform: rotate(0deg);\n      -moz-transform: rotate(0deg);\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -ms-transform: rotate(360deg);\n      -moz-transform: rotate(360deg);\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n"], ["\n  width: 30px;\n  height: 30px;\n  margin-right: 5px;\n  cursor: pointer;\n  -webkit-animation: rotating 2s linear infinite;\n  -moz-animation: rotating 2s linear infinite;\n  -ms-animation: rotating 2s linear infinite;\n  -o-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite;\n  @-webkit-keyframes rotating /* Safari and Chrome */ {\n    from {\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes rotating {\n    from {\n      -ms-transform: rotate(0deg);\n      -moz-transform: rotate(0deg);\n      -webkit-transform: rotate(0deg);\n      -o-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -ms-transform: rotate(360deg);\n      -moz-transform: rotate(360deg);\n      -webkit-transform: rotate(360deg);\n      -o-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n"])));
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children, _c = _a.needRefresh, needRefresh = _c === void 0 ? false : _c;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
-    var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
-    var _d = useState(true), showMenu = _d[0], setShowMenu = _d[1];
+    var _d = useState(!isMobile), isPushed = _d[0], setIsPushed = _d[1];
+    var _e = useState(true), showMenu = _e[0], setShowMenu = _e[1];
     var refPrevOffset = useRef(window.pageYOffset);
     useEffect(function () {
         var handleScroll = function () {
@@ -2765,7 +2766,8 @@ var Menu = function (_a) {
             React.createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(Copyright, null, "kafe finance (c) 2021"),
             React.createElement(Flex, { style: { alignContent: "center" } },
-                React.createElement(Refresh, { src: "./images/spinner.png", onClick: refresh }),
+                needRefresh && React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spinner.png", onClick: refresh }),
+                React.createElement(ReactTooltip, null),
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,
@@ -3026,4 +3028,4 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$6, butt
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$6, button: light$5, colors: lightColors, card: light$4, toggle: light$2, nav: light$1, modal: light, radio: light$3 });
 
-export { Icon$1e as AddIcon, Alert, Icon$1d as ArrowBackIcon, Icon$1c as ArrowDownIcon, Icon$1b as ArrowDropDownIcon, Icon$1a as ArrowDropUpIcon, Icon$19 as ArrowForwardIcon, Icon$18 as AutoRenewIcon, BackgroundImage, GridLayout$1 as BaseLayout, Icon$17 as BinanceIcon, Icon$1g as BlockIcon, Breadcrumbs, Icon$16 as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$14 as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$15 as CardViewIcon, GridLayout as CardsLayout, Checkbox, Icon$1i as CheckmarkCircleIcon, Icon$13 as CheckmarkIcon, Icon$12 as ChevronDownIcon, Icon$11 as ChevronLeftIcon, Icon$10 as ChevronRightIcon, Icon$$ as ChevronUpIcon, Icon$_ as CloseIcon, Icon$Z as CogIcon, Icon$Y as CommunityIcon, Icon$X as CopyIcon, CopyToClipboard, Dropdown, Icon$1h as ErrorIcon, Flex, Icon$O as GooseRoundIcon, Heading, Icon$W as HelpIcon, IconButton, Image, Icon$1f as InfoIcon, Input$1 as Input, Link, LinkExternal, Icon$V as ListViewIcon, Icon$U as LogoIcon, Icon$T as LogoRoundIcon, Menu, Icon$S as MinusIcon, Modal, ModalProvider, Icon$R as OpenNewIcon, Icon$P as PancakeRoundIcon, Icon$Q as PancakesIcon, Icon$N as PrizeIcon, Progress, Icon$K as ProgressBunny, Radio, Icon$M as RemoveIcon, ResetCSS, Icon$G as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$E as SyncAltIcon, Tag, Text, Icon$I as Ticket, Icon$H as TicketRound, ToastContainer, Toggle, Icon$L as VerifiedIcon, Icon$D as WarningIcon, Icon$J as Won, variants as alertVariants, byTextAscending, byTextDescending, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useWalletModal };
+export { Icon$1e as AddIcon, Alert, Icon$1d as ArrowBackIcon, Icon$1c as ArrowDownIcon, Icon$1b as ArrowDropDownIcon, Icon$1a as ArrowDropUpIcon, Icon$19 as ArrowForwardIcon, Icon$18 as AutoRenewIcon, BackgroundImage, GridLayout$1 as BaseLayout, Icon$17 as BinanceIcon, Icon$1g as BlockIcon, Breadcrumbs, Icon$16 as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$14 as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$15 as CardViewIcon, GridLayout as CardsLayout, Checkbox, Icon$1i as CheckmarkCircleIcon, Icon$13 as CheckmarkIcon, Icon$12 as ChevronDownIcon, Icon$11 as ChevronLeftIcon, Icon$10 as ChevronRightIcon, Icon$$ as ChevronUpIcon, Icon$_ as CloseIcon, Icon$Z as CogIcon, Icon$Y as CommunityIcon, Icon$X as CopyIcon, CopyToClipboard, Dropdown, Icon$1h as ErrorIcon, Flex, Icon$O as GooseRoundIcon, Heading, Icon$W as HelpIcon, IconButton, Image, Icon$1f as InfoIcon, Input$1 as Input, Link, LinkExternal, Icon$V as ListViewIcon, Icon$U as LogoIcon, Icon$T as LogoRoundIcon, Menu, Icon$S as MinusIcon, Modal, ModalProvider, Icon$R as OpenNewIcon, Icon$P as PancakeRoundIcon, Icon$Q as PancakesIcon, Icon$N as PrizeIcon, Progress, Icon$K as ProgressBunny, Radio, Icon$M as RemoveIcon, ResetCSS, Icon$G as SearchIcon, Skeleton, Spinner$1 as Spinner, Svg, Icon$F as SwapVertIcon, Icon$E as SyncAltIcon, Tag, Text, Icon$I as Ticket, Icon$H as TicketRound, ToastContainer, Toggle, Icon$L as VerifiedIcon, Icon$D as WarningIcon, Icon$J as Won, variants as alertVariants, byTextAscending, byTextDescending, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useWalletModal };

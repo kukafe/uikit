@@ -19,7 +19,6 @@
     "test": "jest",
     "release": "yarn build && np"
   },
-
   "jest": {
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.js"
@@ -74,6 +73,7 @@
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
     "lodash": "^4.17.20",
+    "react-tooltip": "^4.2.21",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
   }
