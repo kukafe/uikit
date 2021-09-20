@@ -70,12 +70,9 @@ const Spinner = styled.img`
   height: 50px;
   margin-right: 5px;
 
-  width: 50px;
-  height: 50px;
   transform: scale(1.65);
   :hover {
     transform: scale(1.8);
-
   }
 
 
@@ -192,7 +189,12 @@ const Menu: React.FC<NavProps> = ({
           
 
 
-          {needRefresh && <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spin.svg" onClick={refresh}/>}
+          {needRefresh && 
+          <div style={{width: "50px", height: "50px"}}>
+          <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spin.svg" onClick={refresh}/>
+          </div>
+          
+          }
           {/* needRefresh */}
           <ReactTooltip />
           <UserBlock account={account} login={login} logout={logout} />
