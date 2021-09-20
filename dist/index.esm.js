@@ -2768,8 +2768,8 @@ var Menu = function (_a) {
             React.createElement(Flex, { style: { alignItems: "center" } },
                 needRefresh &&
                     React.createElement("div", { style: { width: "50px", height: "50px" } },
-                        React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh })),
-                React.createElement(ReactTooltip, null),
+                        React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
+                        React.createElement(ReactTooltip, null)),
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,

@@ -2782,8 +2782,8 @@ var Menu = function (_a) {
             React__default['default'].createElement(Flex, { style: { alignItems: "center" } },
                 needRefresh &&
                     React__default['default'].createElement("div", { style: { width: "50px", height: "50px" } },
-                        React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh })),
-                React__default['default'].createElement(ReactTooltip__default['default'], null),
+                        React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
+                        React__default['default'].createElement(ReactTooltip__default['default'], null)),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,

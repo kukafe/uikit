@@ -192,11 +192,11 @@ const Menu: React.FC<NavProps> = ({
           {needRefresh && 
           <div style={{width: "50px", height: "50px"}}>
           <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spin.svg" onClick={refresh}/>
+          <ReactTooltip />
           </div>
           
           }
           {/* needRefresh */}
-          <ReactTooltip />
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
           
