@@ -2766,7 +2766,7 @@ var Menu = function (_a) {
             React.createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React.createElement(Copyright, null, "kafe finance (c) 2021"),
             React.createElement(Flex, { style: { alignContent: "center" } },
-                needRefresh && React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spinner.png", onClick: refresh }),
+                needRefresh && React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
                 React.createElement(ReactTooltip, null),
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),

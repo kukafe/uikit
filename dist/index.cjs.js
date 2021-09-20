@@ -2780,7 +2780,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
             React__default['default'].createElement(Copyright, null, "kafe finance (c) 2021"),
             React__default['default'].createElement(Flex, { style: { alignContent: "center" } },
-                needRefresh && React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spinner.png", onClick: refresh }),
+                needRefresh && React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
                 React__default['default'].createElement(ReactTooltip__default['default'], null),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),

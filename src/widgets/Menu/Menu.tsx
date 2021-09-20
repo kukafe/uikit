@@ -180,7 +180,7 @@ const Menu: React.FC<NavProps> = ({
           
 
 
-          {needRefresh && <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spinner.png" onClick={refresh}/>}
+          {needRefresh && <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spin.svg" onClick={refresh}/>}
           {/* needRefresh */}
           <ReactTooltip />
           <UserBlock account={account} login={login} logout={logout} />
