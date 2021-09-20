@@ -66,8 +66,8 @@ const MobileOnlyOverlay = styled(Overlay)`
 
 
 const Spinner = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   margin-right: 5px;
   cursor: pointer;
   -webkit-animation: rotating 2s linear infinite;
