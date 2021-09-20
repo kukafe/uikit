@@ -70,9 +70,9 @@ const Spinner = styled.img`
   height: 50px;
   margin-right: 5px;
 
-  transform: scale(1.65);
+  transform: scale(1.25);
   :hover {
-    transform: scale(1.8);
+    transform: scale(1.4);
   }
 
 
@@ -184,7 +184,7 @@ const Menu: React.FC<NavProps> = ({
         />
 
         <Copyright>kafe finance (c) 2021</Copyright>
-        <Flex style={{alignContent: "center"}}>
+        <Flex style={{alignItems: "center"}}>
 
           
 
