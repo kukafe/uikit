@@ -75,6 +75,14 @@ const PanelFooter: React.FC<Props> = ({
       return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png"
     }
   }
+
+  const getObeliskLogo = (mode: string) => {
+    return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png"
+    
+  }
+
+  
+
   if (!isPushed) {
     return (
       <Container>
@@ -83,6 +91,9 @@ const PanelFooter: React.FC<Props> = ({
           <img src={getLogo('small')} width={24} alt="logo"/>
         </div>
 
+        <div style={{width: "100%", textAlign:"center"}}>
+          <img src={getObeliskLogo('small')} width={24} alt="obelisklogo"/>
+        </div>
         
         <IconButton variant="text" onClick={() => pushNav(true)}>
           <CogIcon />
@@ -96,6 +107,11 @@ const PanelFooter: React.FC<Props> = ({
         <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>
       </div>
+      <div style={{width: "100%", textAlign:"center"}}>
+          <img src={getObeliskLogo('big')} width={100} alt="logo"/>
+      </div>
+
+
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">

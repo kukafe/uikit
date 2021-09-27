@@ -2368,6 +2368,7 @@ var PanelBody = function (_a) {
         var Icon = Icons$1[entry.icon];
         var iconElement = React__default['default'].createElement(Icon, { width: "24px", mr: "8px" });
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+        // console.log(entry.items, location.pathname)
         if (entry.items) {
             return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
                 entry.items.map(function (item) { return (React__default['default'].createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
@@ -2402,16 +2403,23 @@ var PanelFooter = function (_a) {
             return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
         }
     };
+    var getObeliskLogo = function (mode) {
+        return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
+    };
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React__default['default'].createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
+            React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
+                React__default['default'].createElement("img", { src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React__default['default'].createElement(Icon$Z, null))));
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
             React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
+        React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
+            React__default['default'].createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React__default['default'].createElement(Icon$P, { width: "24px", mr: "8px" }),

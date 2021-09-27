@@ -37,15 +37,16 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         const iconElement = <Icon width="24px" mr="8px" />;
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
+        // console.log(entry.items, location.pathname)
         if (entry.items) {
           return (
             <Accordion
-              key={entry.label}
-              isPushed={isPushed}
-              pushNav={pushNav}
-              icon={iconElement}
-              label={entry.label}
-              initialOpenState={entry.initialOpenState}
+            key={entry.label}
+            isPushed={isPushed}
+            pushNav={pushNav}
+            icon={iconElement}
+            label={entry.label}
+            initialOpenState={entry.initialOpenState}
               className={calloutClass}
             >
               {isPushed &&

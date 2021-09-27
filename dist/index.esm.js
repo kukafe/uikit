@@ -2354,6 +2354,7 @@ var PanelBody = function (_a) {
         var Icon = Icons$1[entry.icon];
         var iconElement = React.createElement(Icon, { width: "24px", mr: "8px" });
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
+        // console.log(entry.items, location.pathname)
         if (entry.items) {
             return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
                 entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
@@ -2388,16 +2389,23 @@ var PanelFooter = function (_a) {
             return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
         }
     };
+    var getObeliskLogo = function (mode) {
+        return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
+    };
     if (!isPushed) {
         return (React.createElement(Container, null,
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React.createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
+            React.createElement("div", { style: { width: "100%", textAlign: "center" } },
+                React.createElement("img", { src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React.createElement(Icon$Z, null))));
     }
     return (React.createElement(Container, null,
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
             React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
+        React.createElement("div", { style: { width: "100%", textAlign: "center" } },
+            React.createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "logo" })),
         React.createElement(SocialEntry, null,
             cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React.createElement(Icon$P, { width: "24px", mr: "8px" }),
