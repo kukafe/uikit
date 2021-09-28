@@ -2409,7 +2409,7 @@ var PanelFooter = function (_a) {
     }
     return (React.createElement(Container, null,
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), height: 75, style: { cursor: "pointer" }, alt: "obelisklogo" })),
+            React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), style: { cursor: "pointer", height: "75px" }, alt: "obelisklogo" })),
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
             React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React.createElement(SocialEntry, null,
