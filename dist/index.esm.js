@@ -2398,17 +2398,17 @@ var PanelFooter = function (_a) {
     if (!isPushed) {
         return (React.createElement(Container, null,
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-                React.createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
-            React.createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React.createElement("img", { src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
+            React.createElement("div", { style: { width: "100%", textAlign: "center" } },
+                React.createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React.createElement(Icon$Z, null))));
     }
     return (React.createElement(Container, null,
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
+            React.createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React.createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "logo" })),
+            React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React.createElement(SocialEntry, null,
             cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React.createElement(Icon$P, { width: "24px", mr: "8px" }),

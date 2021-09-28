@@ -86,14 +86,14 @@ const PanelFooter: React.FC<Props> = ({
   if (!isPushed) {
     return (
       <Container>
+        <div style={{width: "100%", textAlign:"center"}}>
+          <img src={getObeliskLogo('small')} width={24} alt="obelisklogo"/>
+        </div>
 
         <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('small')} width={24} alt="logo"/>
         </div>
 
-        <div style={{width: "100%", textAlign:"center"}}>
-          <img src={getObeliskLogo('small')} width={24} alt="obelisklogo"/>
-        </div>
         
         <IconButton variant="text" onClick={() => pushNav(true)}>
           <CogIcon />
@@ -104,11 +104,11 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
+      <div style={{width: "100%", textAlign:"center"}}>
+          <img src={getObeliskLogo('big')} width={100} alt="obelisklogo"/>
+      </div>
         <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>
-      </div>
-      <div style={{width: "100%", textAlign:"center"}}>
-          <img src={getObeliskLogo('big')} width={100} alt="logo"/>
       </div>
 
 
