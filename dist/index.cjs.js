@@ -2409,10 +2409,13 @@ var PanelFooter = function (_a) {
     var getObeliskLogo = function (mode) {
         return (mode === "small") ? "images/obelisk.png" : "images/obelisk.png";
     };
+    var openObelisk = function () {
+        window.open("https://twitter.com/ObeliskOrg/status/1442510158253395968?s=20", "_blank");
+    };
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
-                React__default['default'].createElement("img", { src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
+                React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
             React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React__default['default'].createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2420,7 +2423,7 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React__default['default'].createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
+            React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
             React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,

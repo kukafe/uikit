@@ -2395,10 +2395,13 @@ var PanelFooter = function (_a) {
     var getObeliskLogo = function (mode) {
         return (mode === "small") ? "images/obelisk.png" : "images/obelisk.png";
     };
+    var openObelisk = function () {
+        window.open("https://twitter.com/ObeliskOrg/status/1442510158253395968?s=20", "_blank");
+    };
     if (!isPushed) {
         return (React.createElement(Container, null,
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-                React.createElement("img", { src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
+                React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React.createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2406,7 +2409,7 @@ var PanelFooter = function (_a) {
     }
     return (React.createElement(Container, null,
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React.createElement("img", { src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
+            React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
             React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React.createElement(SocialEntry, null,

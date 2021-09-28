@@ -81,13 +81,15 @@ const PanelFooter: React.FC<Props> = ({
     
   }
 
-  
+  const openObelisk = () => {
+    window.open("https://twitter.com/ObeliskOrg/status/1442510158253395968?s=20", "_blank");
+  }
 
   if (!isPushed) {
     return (
       <Container>
         <div style={{width: "100%", textAlign:"center"}}>
-          <img src={getObeliskLogo('small')} width={24} alt="obelisklogo"/>
+          <img onClick={openObelisk} src={getObeliskLogo('small')} width={24} alt="obelisklogo"/>
         </div>
 
         <div style={{width: "100%", textAlign:"center"}}>
@@ -105,7 +107,7 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <div style={{width: "100%", textAlign:"center"}}>
-          <img src={getObeliskLogo('big')} width={100} alt="obelisklogo"/>
+          <img onClick={openObelisk} src={getObeliskLogo('big')} width={100} alt="obelisklogo"/>
       </div>
         <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>
