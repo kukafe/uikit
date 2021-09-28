@@ -107,7 +107,7 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <div style={{width: "100%", textAlign:"center"}}>
-          <img onClick={openObelisk} src={getObeliskLogo('big')} style={{cursor: "pointer", height: "75px"}} alt="obelisklogo"/>
+          <img onClick={openObelisk} src={getObeliskLogo('big')} style={{cursor: "pointer", height: "50px"}} alt="obelisklogo"/>
       </div>
         <div style={{width: "100%", textAlign:"center"}}>
           <img src={getLogo('big')} width={100} alt="logo"/>

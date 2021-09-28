@@ -2423,7 +2423,7 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), style: { cursor: "pointer", height: "75px" }, alt: "obelisklogo" })),
+            React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), style: { cursor: "pointer", height: "50px" }, alt: "obelisklogo" })),
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
             React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,
