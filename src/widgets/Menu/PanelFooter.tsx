@@ -77,7 +77,7 @@ const PanelFooter: React.FC<Props> = ({
   }
 
   const getObeliskLogo = (mode: string) => {
-    return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png"
+    return (mode === "small") ? "images/obelisk.png" : "images/obelisk.png"
     
   }
 

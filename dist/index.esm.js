@@ -2356,14 +2356,17 @@ var PanelBody = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         // console.log(entry.items, location.pathname)
         if (entry.items) {
-            return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
-                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
-                    React.createElement(MenuLink, { href: item.href }, item.label))); })));
+            return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass },
+                isPushed &&
+                    entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
+                        React.createElement(MenuLink, { "data-tip": item.tooltip ? item.tooltip : null, href: item.href }, item.label))); }),
+                React.createElement(ReactTooltip, null)));
         }
         return (React.createElement(MenuEntry, { key: entry.label, isActive: (entry.href === '/') ? location.pathname === '/' : location.pathname.startsWith(entry.href), className: calloutClass },
-            React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
+            React.createElement(MenuLink, { "data-tip": entry.tooltip ? entry.tooltip : null, href: entry.href, onClick: handleClick },
                 iconElement,
-                React.createElement(LinkLabel, { isPushed: isPushed }, entry.label))));
+                React.createElement(LinkLabel, { isPushed: isPushed }, entry.label)),
+            React.createElement(ReactTooltip, null)));
     })));
 };
 var templateObject_1$9;
@@ -2390,7 +2393,7 @@ var PanelFooter = function (_a) {
         }
     };
     var getObeliskLogo = function (mode) {
-        return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
+        return (mode === "small") ? "images/obelisk.png" : "images/obelisk.png";
     };
     if (!isPushed) {
         return (React.createElement(Container, null,

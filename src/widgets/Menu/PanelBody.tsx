@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ReactTooltip from 'react-tooltip';
 import { useLocation } from "react-router-dom";
 import { SvgProps } from "../../components/Svg";
 import * as IconModule from "./icons";
@@ -40,6 +41,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         // console.log(entry.items, location.pathname)
         if (entry.items) {
           return (
+
             <Accordion
             key={entry.label}
             isPushed={isPushed}
@@ -52,18 +54,20 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               {isPushed &&
                 entry.items.map((item) => (
                   <MenuEntry key={item.href} secondary isActive={(item.href==='/') ? location.pathname==='/' : location.pathname.startsWith(item.href)} onClick={handleClick}>
-                    <MenuLink href={item.href}>{item.label}</MenuLink>
+                    <MenuLink data-tip={item.tooltip?item.tooltip:null} href={item.href}>{item.label}</MenuLink>
                   </MenuEntry>
                 ))}
+                <ReactTooltip />
             </Accordion>
           );
         }
         return (
           <MenuEntry key={entry.label} isActive={(entry.href === '/') ? location.pathname === '/' : location.pathname.startsWith(entry.href as string)} className={calloutClass}>
-            <MenuLink href={entry.href} onClick={handleClick}>
+            <MenuLink data-tip={entry.tooltip?entry.tooltip:null} href={entry.href} onClick={handleClick}>
               {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
             </MenuLink>
+            <ReactTooltip />
           </MenuEntry>
         );
       })}
