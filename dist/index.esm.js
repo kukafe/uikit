@@ -2401,7 +2401,7 @@ var PanelFooter = function (_a) {
     if (!isPushed) {
         return (React.createElement(Container, null,
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-                React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
+                React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, style: { cursor: "pointer" }, alt: "obelisklogo" })),
             React.createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React.createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2409,7 +2409,7 @@ var PanelFooter = function (_a) {
     }
     return (React.createElement(Container, null,
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
+            React.createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), height: 75, style: { cursor: "pointer" }, alt: "obelisklogo" })),
         React.createElement("div", { style: { width: "100%", textAlign: "center" } },
             React.createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React.createElement(SocialEntry, null,

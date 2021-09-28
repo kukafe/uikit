@@ -2415,7 +2415,7 @@ var PanelFooter = function (_a) {
     if (!isPushed) {
         return (React__default['default'].createElement(Container, null,
             React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
-                React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, alt: "obelisklogo" })),
+                React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('small'), width: 24, style: { cursor: "pointer" }, alt: "obelisklogo" })),
             React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
                 React__default['default'].createElement("img", { src: getLogo('small'), width: 24, alt: "logo" })),
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2423,7 +2423,7 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
-            React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), width: 100, alt: "obelisklogo" })),
+            React__default['default'].createElement("img", { onClick: openObelisk, src: getObeliskLogo('big'), height: 75, style: { cursor: "pointer" }, alt: "obelisklogo" })),
         React__default['default'].createElement("div", { style: { width: "100%", textAlign: "center" } },
             React__default['default'].createElement("img", { src: getLogo('big'), width: 100, alt: "logo" })),
         React__default['default'].createElement(SocialEntry, null,
