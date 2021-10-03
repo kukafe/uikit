@@ -31,3 +31,4 @@ export { default as DripIcon } from "./Drip";
 export { default as StatusIcon } from "./Status";
 export { default as ObeliskIcon } from "./Obelisk";
 export { default as PortfolioIcon } from "./Portfolio";
+export { default as SharesIcon } from "./Shares";
