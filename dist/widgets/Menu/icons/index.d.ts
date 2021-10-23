@@ -33,3 +33,4 @@ export { default as ObeliskIcon } from "./Obelisk";
 export { default as PortfolioIcon } from "./Portfolio";
 export { default as SharesIcon } from "./Shares";
 export { default as BridgeIcon } from "./Bridge";
+export { default as ZapIcon } from "./Zap";
