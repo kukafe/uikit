@@ -67,12 +67,15 @@ const PanelFooter: React.FC<Props> = ({
 }) => {
   const kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0 || window.location.href.indexOf('kukafe.finance') >= 0
   const movrMode = window.location.href.indexOf('moon.kafe.finance') >= 0
+  const croMode = window.location.href.indexOf('cro.kafe.finance') >= 0
 
   const getLogo = (mode: string) => {
     if (kccMode){
       return (mode === "small") ? "images/kcc_small.png" : "images/kcc.svg"
     } else if (movrMode) {
       return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png"
+    }else if (croMode) {
+      return (mode === "small") ? "images/cronos.png" : "images/cronos_big.png"
     }
   }
 

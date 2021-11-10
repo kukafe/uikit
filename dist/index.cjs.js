@@ -2426,12 +2426,16 @@ var PanelFooter = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark, cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, priceLink = _a.priceLink;
     var kccMode = window.location.href.indexOf('ku.kafe.finance') >= 0 || window.location.href.indexOf('kukafe.finance') >= 0;
     var movrMode = window.location.href.indexOf('moon.kafe.finance') >= 0;
+    var croMode = window.location.href.indexOf('cro.kafe.finance') >= 0;
     var getLogo = function (mode) {
         if (kccMode) {
             return (mode === "small") ? "images/kcc_small.png" : "images/kcc.svg";
         }
         else if (movrMode) {
             return (mode === "small") ? "images/moonriver.png" : "images/moonriver_big.png";
+        }
+        else if (croMode) {
+            return (mode === "small") ? "images/cronos.png" : "images/cronos_big.png";
         }
     };
     var getObeliskLogo = function (mode) {
