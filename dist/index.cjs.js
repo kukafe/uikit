@@ -8,7 +8,7 @@ var styledSystem = require('styled-system');
 var get = require('lodash/get');
 var noop = require('lodash/noop');
 var debounce = require('lodash/debounce');
-var ReactTooltip = require('react-tooltip');
+var Tooltip$1 = require('@mui/material/Tooltip');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
 var reactTransitionGroup = require('react-transition-group');
@@ -20,7 +20,7 @@ var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
-var ReactTooltip__default = /*#__PURE__*/_interopDefaultLegacy(ReactTooltip);
+var Tooltip__default = /*#__PURE__*/_interopDefaultLegacy(Tooltip$1);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
 
 /*! *****************************************************************************
@@ -2398,17 +2398,16 @@ var PanelBody = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         // console.log(entry.items, location.pathname)
         if (entry.items) {
-            return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass },
-                isPushed &&
-                    entry.items.map(function (item) { return (React__default['default'].createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
-                        React__default['default'].createElement(MenuLink, { "data-tip": item.tooltip ? item.tooltip : null, href: item.href }, item.label))); }),
-                React__default['default'].createElement(ReactTooltip__default['default'], null)));
+            return (React__default['default'].createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                entry.items.map(function (item) { return (React__default['default'].createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
+                    React__default['default'].createElement(Tooltip__default['default'], { title: item.tooltip ? item.tooltip : null },
+                        React__default['default'].createElement(MenuLink, { href: item.href }, item.label)))); })));
         }
         return (React__default['default'].createElement(MenuEntry, { key: entry.label, isActive: (entry.href === '/') ? location.pathname === '/' : location.pathname.startsWith(entry.href), className: calloutClass },
-            React__default['default'].createElement(MenuLink, { "data-tip": entry.tooltip ? entry.tooltip : null, href: entry.href, onClick: handleClick },
-                iconElement,
-                React__default['default'].createElement(LinkLabel, { isPushed: isPushed }, entry.label)),
-            React__default['default'].createElement(ReactTooltip__default['default'], null)));
+            React__default['default'].createElement(Tooltip__default['default'], { title: entry.tooltip ? entry.tooltip : null },
+                React__default['default'].createElement(MenuLink, { href: entry.href, onClick: handleClick },
+                    iconElement,
+                    React__default['default'].createElement(LinkLabel, { isPushed: isPushed }, entry.label)))));
     })));
 };
 var templateObject_1$9;
@@ -2828,8 +2827,8 @@ var Menu = function (_a) {
             React__default['default'].createElement(Flex, { style: { alignItems: "center" } },
                 needRefresh &&
                     React__default['default'].createElement("div", { style: { width: "50px", height: "50px" } },
-                        React__default['default'].createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
-                        React__default['default'].createElement(ReactTooltip__default['default'], null)),
+                        React__default['default'].createElement(Tooltip__default['default'], { title: "New version available, please refresh!" },
+                            React__default['default'].createElement(Spinner, { src: "./images/spin.svg", onClick: refresh }))),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,

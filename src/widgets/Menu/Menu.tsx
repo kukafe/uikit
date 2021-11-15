@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import ReactTooltip from 'react-tooltip';
+import Tooltip from '@mui/material/Tooltip';
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
@@ -191,8 +191,10 @@ const Menu: React.FC<NavProps> = ({
 
           {needRefresh && 
           <div style={{width: "50px", height: "50px"}}>
-          <Spinner data-effect="solid" data-place="left" data-tip="New version available, please refresh!" src="./images/spin.svg" onClick={refresh}/>
-          <ReactTooltip />
+             {/* @ts-ignore */}
+            <Tooltip title={"New version available, please refresh!"}>
+              <Spinner src="./images/spin.svg" onClick={refresh}/>
+            </Tooltip>
           </div>
           
           }

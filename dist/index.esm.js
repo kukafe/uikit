@@ -4,7 +4,7 @@ import { space, flexbox, layout } from 'styled-system';
 import get from 'lodash/get';
 import noop from 'lodash/noop';
 import debounce from 'lodash/debounce';
-import ReactTooltip from 'react-tooltip';
+import Tooltip$1 from '@mui/material/Tooltip';
 import throttle from 'lodash/throttle';
 import { Link as Link$1, NavLink, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -2384,17 +2384,16 @@ var PanelBody = function (_a) {
         var calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         // console.log(entry.items, location.pathname)
         if (entry.items) {
-            return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass },
-                isPushed &&
-                    entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
-                        React.createElement(MenuLink, { "data-tip": item.tooltip ? item.tooltip : null, href: item.href }, item.label))); }),
-                React.createElement(ReactTooltip, null)));
+            return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
+                entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: (item.href === '/') ? location.pathname === '/' : location.pathname.startsWith(item.href), onClick: handleClick },
+                    React.createElement(Tooltip$1, { title: item.tooltip ? item.tooltip : null },
+                        React.createElement(MenuLink, { href: item.href }, item.label)))); })));
         }
         return (React.createElement(MenuEntry, { key: entry.label, isActive: (entry.href === '/') ? location.pathname === '/' : location.pathname.startsWith(entry.href), className: calloutClass },
-            React.createElement(MenuLink, { "data-tip": entry.tooltip ? entry.tooltip : null, href: entry.href, onClick: handleClick },
-                iconElement,
-                React.createElement(LinkLabel, { isPushed: isPushed }, entry.label)),
-            React.createElement(ReactTooltip, null)));
+            React.createElement(Tooltip$1, { title: entry.tooltip ? entry.tooltip : null },
+                React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
+                    iconElement,
+                    React.createElement(LinkLabel, { isPushed: isPushed }, entry.label)))));
     })));
 };
 var templateObject_1$9;
@@ -2814,8 +2813,8 @@ var Menu = function (_a) {
             React.createElement(Flex, { style: { alignItems: "center" } },
                 needRefresh &&
                     React.createElement("div", { style: { width: "50px", height: "50px" } },
-                        React.createElement(Spinner, { "data-effect": "solid", "data-place": "left", "data-tip": "New version available, please refresh!", src: "./images/spin.svg", onClick: refresh }),
-                        React.createElement(ReactTooltip, null)),
+                        React.createElement(Tooltip$1, { title: "New version available, please refresh!" },
+                            React.createElement(Spinner, { src: "./images/spin.svg", onClick: refresh }))),
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(BodyWrapper, null,
